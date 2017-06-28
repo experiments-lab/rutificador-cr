@@ -25,4 +25,4 @@ You can find more info in howto.ts
 
 That is all. Happy Hacking :octocat:
 
-#### **PD**: index.ts is the core, interfaces.ts are models and howto.ts is a demo.
+#### **PD**: index.ts is the core class, interfaces.ts are models and howto.ts is a demo.
