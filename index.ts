@@ -1,6 +1,6 @@
 import * as cheerio from "./node_modules/cheerio";
 import * as request from './node_modules/request-promise';
-import { Person, Options, JsonResponse, URLS } from "./interfaces";
+import { Person, Options, JsonResponse, COUNTRIES } from "./interfaces";
 
 const load = (cheerio:any, obj:any) => cheerio.load(obj);
 
@@ -8,7 +8,7 @@ export class Rutificador {
     private static url:string;
     private static options:Options;
 
-    static defineURL(country:URLS): string {
+    static defineURL(country:COUNTRIES): string {
         switch (country){
             case ("ARG"): return "http://argentina.Rutificador.com";
             case ("CHI"): return "https://chile.Rutificador.com";
