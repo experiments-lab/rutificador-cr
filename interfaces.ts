@@ -10,7 +10,12 @@ export interface Options {
 
 export interface JsonResponse {
     status:string,
-    value:JSON
+    value:Object
 }
 
-export type Countries = "ARG" | "CHI" | "CRC" | "HON" | "PAR" |  "PER";
+export type Countries = "Argentina" |
+                        "Chile" |
+                        "Costa Rica" |
+                        "Honduras" |
+                        "Paraguay" |
+                        "Peru";

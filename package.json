@@ -1,6 +1,6 @@
 {
   "name": "rutificador-cr",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "license": "MIT",
   "description": "Get IDs from Costa Rican people's name. Inspired by Chilean RUT.",
   "main": "index.ts",
@@ -12,12 +12,14 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
+    "inquirer": "^3.1.1",
     "request": "^2.81.0",
     "request-promise": "^4.2.0"
   },
   "devDependencies": {
-    "typescript": "~2.4.0",
-    "ts-node": "~3.1.0"
+    "@types/node": "^4.2.12",
+    "ts-node": "~3.1.0",
+    "typescript": "~2.4.0"
   },
   "repository": {
     "type": "git",

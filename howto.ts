@@ -1,28 +1,31 @@
+/// <reference path="./node_modules/@types/node/index.d.ts" />
+import * as inquirer from './node_modules/inquirer'
 import { Person } from './interfaces'
 import { Rutificador } from './index';
 
-
-try{
-    const person:Person = {id:"Jose Carrillo Angulo", country:"CRC"};
-    console.log(`> Searching for ${person.id} in ${person.country}:\n`);
-
-    Rutificador.request(person).then((joses:JSON) => {
-        console.log(joses);
-    });
+const questions = [
+    {
+        type: 'input',
+        name: 'id',
+        message: 'What\'s your full name: ',
+        default: () => {return 'Juan Valdez';}
+    },
+    {
+        type: 'list',
+        name: 'country',
+        message: 'Where are you from: ',
+        choices: [ 'Argentina', 'Chile', 'Costa Rica', 'Honduras', 'Paraguay', 'Peru' ],
+        default: () => {return 'Costa Rica'}
+    }
+];
+inquirer.prompt(questions).then(function (answer:Person) {
+    try{
+        const person:Person = answer;
+        console.log(`> Searching for ${person.id} in ${person.country}:\n`);
+        Rutificador.request(person).then((results:JSON) => {
+            console.log(results);
+        });
 } catch (Ex){
-    console.log(`No matches.`); //For some reason this turned out to be not working
+    console.log(`No matches.`);
 }
-
-/* How-to
-
- Just declare a Person var and send it with Rutificador
- Note: id can also be a CI number
-
-    Supported countries:
-        ARG: Argentina
-        CRC: Costa Rica
-        CHI: Chile
-        HON: Honduras
-        PAR: Paraguay
-        PER: Peru
- */
+});

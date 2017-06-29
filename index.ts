@@ -10,13 +10,13 @@ export class Rutificador {
 
     static defineURL(country:Countries): string {
         switch (country){
-            case ("ARG"): return "http://argentina.Rutificador.com";
-            case ("CHI"): return "https://chile.Rutificador.com";
-            case ("CRC"): return "http://costarica.Rutificador.com";
-            case ("HON"): return "http://honduras.Rutificador.com";
-            case ("PAR"): return "http://paraguay.Rutificador.com";
-            case ("PER"): return "http://peru.Rutificador.com";
-            default: return "none";
+            case ("Argentina"): return "http://argentina.Rutificador.com";
+            case ("Chile"): return "https://chile.Rutificador.com";
+            case ("Costa Rica"): return "http://costarica.Rutificador.com";
+            case ("Honduras"): return "http://honduras.Rutificador.com";
+            case ("Paraguay"): return "http://paraguay.Rutificador.com";
+            case ("Peru"): return "http://peru.Rutificador.com";
+            default: return "";
         }
     };
     static transform(body:any) {
@@ -45,10 +45,11 @@ export class Rutificador {
                     }
                 })
             })
-            .then((resp:string): JSON => {
+            .then((resp:string): Object => {
                 let json:JsonResponse = JSON.parse(resp);
                 if (json.status !== "success") {
-                    throw new Error(JSON.parse(json.status));
+                    json.value = {info: 'No matches'};
+                    return json.value;
                 } else {
                     return json.value;
                 }
