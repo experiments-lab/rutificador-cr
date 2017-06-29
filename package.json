@@ -1,8 +1,8 @@
 {
   "name": "rutificador-cr",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
-  "description": "Get CED. from Costa Rican people's name. Inspired by Chilean RUT.",
+  "description": "Get IDs from Costa Rican people's name. Inspired by Chilean RUT.",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node howto.ts"
@@ -13,12 +13,15 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "request": "^2.81.0",
-    "request-promise": "^4.2.0",
-    "ts-node": "^3.1.0"
+    "request-promise": "^4.2.0"
+  },
+  "devDependencies": {
+    "typescript": "~2.4.0",
+    "ts-node": "~3.1.0"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/experiments-lab/rutificador-cr"
   },
   "author": "Emilio González <egonzalezm08@gmail.com> (https://github.com/egm24)",
   "keywords": [
