@@ -30,16 +30,16 @@ $ npm start
 ? Where are you from: Costa Rica
 > Searching for Juan Valdez in Costa Rica:
 
-[ { ci: '112760582', name: 'JUAN DIEGO VALDEZ MADRIGAL' },
-  { ci: '207240707', name: 'JUAN FRANCISCO SOMOZA VALDEZ' },
-  { ci: '402210957', name: 'JUAN ANTONIO ZUÑIGA VALDEZ' },
-  { ci: '502000620', name: 'JUAN CARLOS VALDEZ OBANDO' },
-  { ci: '602760717', name: 'JUAN CARLOS SOTO VALDEZ' },
-  { ci: '603810259', name: 'JUAN GABRIEL GOMEZ VALDEZ' },
-  { ci: '800800021', name: 'JUAN ANTONIO RIVAS VALDEZ' },
-  { ci: '800920557', name: 'JUAN AMAURYS RAMIREZ VALDEZ' },
-  { ci: '800990860', name: 'JUAN ESTEBAN VALDEZ CUELLO' },
-  { ci: '900860984', name: 'JUAN ANTONIO VALDEZ PASTRAN' } ]
+[ { ci: 'XXXXXXXX2', name: 'JUAN DIEGO VALDEZ MADRIGAL' },
+  { ci: 'XXXXXXXX7', name: 'JUAN FRANCISCO SOMOZA VALDEZ' },
+  { ci: 'XXXXXXXX7', name: 'JUAN ANTONIO ZUÑIGA VALDEZ' },
+  { ci: 'XXXXXXXX0', name: 'JUAN CARLOS VALDEZ OBANDO' },
+  { ci: 'XXXXXXXX7', name: 'JUAN CARLOS SOTO VALDEZ' },
+  { ci: 'XXXXXXXX9', name: 'JUAN GABRIEL GOMEZ VALDEZ' },
+  { ci: 'XXXXXXXX1', name: 'JUAN ANTONIO RIVAS VALDEZ' },
+  { ci: 'XXXXXXXX7', name: 'JUAN AMAURYS RAMIREZ VALDEZ' },
+  { ci: 'XXXXXXXX0', name: 'JUAN ESTEBAN VALDEZ CUELLO' },
+  { ci: 'XXXXXXXX4', name: 'JUAN ANTONIO VALDEZ PASTRAN' } ]
 
   ```
 
