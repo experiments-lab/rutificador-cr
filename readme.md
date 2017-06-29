@@ -9,6 +9,9 @@ The original is written in ECMA2015, I wanted to put in practice my recent learn
 Just run:
 
  ```bash
+ # Install ts-node globally if you don't actually have it
+ npm install -g ts-node
+ # Prepare the local dependencies and run
  npm install
  npm start
  ```
