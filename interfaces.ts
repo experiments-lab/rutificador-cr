@@ -1,6 +1,6 @@
 export interface Person {
     id: string | number,
-    country:COUNTRIES
+    country:Countries
 }
 
 export interface Options {
@@ -10,7 +10,7 @@ export interface Options {
 
 export interface JsonResponse {
     status:string,
-    value:string
+    value:JSON
 }
 
-export type COUNTRIES = "ARG" | "CHI" | "CRC" | "HON" | "PAR" |  "PER";
+export type Countries = "ARG" | "CHI" | "CRC" | "HON" | "PAR" |  "PER";

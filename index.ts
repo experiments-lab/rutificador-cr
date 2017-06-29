@@ -1,6 +1,6 @@
 import * as cheerio from "./node_modules/cheerio";
 import * as request from './node_modules/request-promise';
-import { Person, Options, JsonResponse, COUNTRIES } from "./interfaces";
+import { Person, Options, JsonResponse, Countries } from "./interfaces";
 
 const load = (cheerio:any, obj:any) => cheerio.load(obj);
 
@@ -8,7 +8,7 @@ export class Rutificador {
     private static url:string;
     private static options:Options;
 
-    static defineURL(country:COUNTRIES): string {
+    static defineURL(country:Countries): string {
         switch (country){
             case ("ARG"): return "http://argentina.Rutificador.com";
             case ("CHI"): return "https://chile.Rutificador.com";
@@ -22,12 +22,12 @@ export class Rutificador {
     static transform(body:any) {
         return load(cheerio, body);
     };
-    static request(person:Person){
+    static request(person:Person): Promise<JSON>{
         this.url = this.defineURL(person.country);
         this.options = {url:this.url,transform:this.transform};
         return request(this.options)
-            .then(($:any) => $('input[name="csrfmiddlewaretoken"]').val())
-            .then((token:any) => {
+            .then(($:any):string => $('input[name="csrfmiddlewaretoken"]').val())
+            .then((token:string):string => {
                 const j = request.jar();
                 const cookie = request.cookie(`csrftoken=${token}`);
                 j.setCookie(cookie, `${this.url}/get_generic_ajax/`);
@@ -45,12 +45,12 @@ export class Rutificador {
                     }
                 })
             })
-            .then((resp:string) => {
+            .then((resp:string): JSON => {
                 let json:JsonResponse = JSON.parse(resp);
                 if (json.status !== "success") {
-                    throw new Error(json.status)
+                    throw new Error(JSON.parse(json.status));
                 } else {
-                    return json.value
+                    return json.value;
                 }
         });
     }

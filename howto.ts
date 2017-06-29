@@ -4,13 +4,13 @@ import { Rutificador } from './index';
 
 try{
     const person:Person = {id:"Jose Carrillo Angulo", country:"CRC"};
-    console.log(`> Searching for ${person.id} in ${person.country}:\n\n`);
+    console.log(`> Searching for ${person.id} in ${person.country}:\n`);
 
-    Rutificador.request(person).then((joses:any) => {
+    Rutificador.request(person).then((joses:JSON) => {
         console.log(joses);
     });
 } catch (Ex){
-    console.log(Ex);
+    console.log(`No matches.`); //For some reason this turned out to be not working
 }
 
 /* How-to
